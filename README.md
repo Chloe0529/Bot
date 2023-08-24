@@ -10,7 +10,7 @@
 // @grant        GM.setValue
 // @grant        GM.getValue
 // @grant        unsafeWindow
-// @description  commands: p(key) = bot come/stop, !join (+ team name) = join clan, !leave = leave clan, !" = follow player, !* = move with w,a,s,d, !mousetrack = move with mouse, !stopp = stop move with mouse, shift(key) = unequip hat, m(key) = biome hat, z(key) = tank gear, home(key) = soldier helmet or emp helmet, b(key) = bull helmet, u(key) = samurai armor
+// @description  commands: !ffs = bot come/stop, !join (+ team name) = join clan, !leave = leave clan, !f = follow player, !* = move with w,a,s,d, !mousetrack = move with mouse, !stopp = stop move with mouse, !food = farm food, !stone = farm stone, !gold = farm gold, !wood = farm wood, ！age/wood/stone/food/gold = see bot resource, !send = send 4 bot, ！send bot = send 4 gold bot, r(key) = insta kill (auto aim), shift(key) = unequip hat, m(key) = biome hat, z(key) = tank gear, home(key) = soldier helmet or emp helmet, b(key) = bull helmet, u(key) = samurai armor
 // @author       idk (i think zyenith) but fixed by _vcrazy_
 // ==/UserScript==
 
@@ -30,13 +30,21 @@
  --------------------------------------------------------------------------------------------------------------------------------------
 
 Commands:
-p(key) = bot come/stop,
+!ffs = bot come/stop,
 !join (+ team name) = join clan,
 !leave = leave clan,
-!" = follow player,
+!f = follow player,
 !* = move with w,a,s,d,
 !mousetrack = move with mouse,
 !stopp = stop move with mouse
+!food = farm food,
+!stone = farm stone,
+!gold = farm gold,
+!wood = farm wood,
+！age/wood/stone/food/gold = see bot resource,
+!send = send 4 bot,
+！send bot = send 4 gold bot,
+r(key) = insta kill (auto aim)
 shift(key) = unequip hat
 m(key) = biome hat
 z(key) = tank gear
@@ -64,14 +72,14 @@ commandsDiv.style.fontSize = '12px';
 
 const keyCommands = document.createElement('div');
 keyCommands.className = 'key';
-keyCommands.textContent = 'Commands (key): p = bot come/stop, shift = unequip hat, m = biome hat, z = tank gear, home = soldier helmet or emp helmet, b = bull helmet, u = samurai armor';
+keyCommands.textContent = 'Commands (key): r = insta kill (auto aim), shift = unequip hat, m = biome hat, z = tank gear, home = soldier helmet or emp helmet, b = bull helmet, u = samurai armor';
 commandsDiv.appendChild(keyCommands);
 
 commandsDiv.appendChild(document.createElement('br'));
 
 const chatCommands = document.createElement('div');
 chatCommands.className = 'into-the-chat';
-chatCommands.textContent = 'Commands (into the chat): !join (+ team name) = join clan, !leave = leave clan, !\\" = follow player, !* = move with w,a,s,d, !mousetrack = move with mouse, !stopp = stop move with mouse';
+chatCommands.textContent = 'Commands (into the chat): ！ffs = bot come/stop, !join (+ team name) = join clan, !leave = leave clan, !f = follow player, !* = move with w,a,s,d, !mousetrack = move with mouse, !send = send 4 bot,！send bot = send 4 gold bot, ！age/wood/stone/food/gold = see bot resource, !wood = farm wood, !stone = farm stone, !food = farm food, !gold = farm gold, !stopp = stop move with mouse';
 commandsDiv.appendChild(chatCommands);
 
 document.body.appendChild(commandsDiv);
